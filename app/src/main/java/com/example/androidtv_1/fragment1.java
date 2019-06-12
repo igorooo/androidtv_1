@@ -73,9 +73,10 @@ public class fragment1 extends BrowseFragment {
             HeaderItem gridItemPresenterHeader = new HeaderItem(0, "Text Presenter "+i);
             ItemGridPresenter myGridPresenter = new ItemGridPresenter();
             ArrayObjectAdapter gridRowAdapter = new ArrayObjectAdapter(myGridPresenter);
-            gridRowAdapter.add("ITEM "+(i+1));
-            gridRowAdapter.add("ITEM "+(i+2));
-            gridRowAdapter.add("ITEM "+(i+3));
+            gridRowAdapter.add("Error Fragment");
+            gridRowAdapter.add("Guided Steps");
+            gridRowAdapter.add("Video");
+            //gridRowAdapter.add(new VideoActivity());
 
             List<Card> cardList = CardList.buildCardList(getActivity(), 3);
             HeaderItem cardPresenterHeader = new HeaderItem(1, "Moj CardPresenter");
@@ -114,17 +115,17 @@ public class fragment1 extends BrowseFragment {
             if(item instanceof String){
                 Toast.makeText(getActivity(), ((String) item), Toast.LENGTH_SHORT).show();
 
-                if(((String) item).compareTo("ITEM 1") == 0){
+                if(((String) item).compareTo("Error Fragment") == 0){
                     Intent intent = new Intent(getActivity(), ClickActivity.class);
                     startActivity(intent);
                 }
 
-                if(((String) item).compareTo("ITEM 2") == 0){
+                if(((String) item).compareTo("Guided Steps") == 0){
                     Intent intent = new Intent(getActivity(), GuidedStepActivity.class);
                     startActivity(intent);
                 }
 
-                if(((String) item).compareTo("ITEM 3") == 0){
+                if(((String) item).compareTo("Video") == 0){
                     Intent intent = new Intent(getActivity(), VideoActivity.class);
                     startActivity(intent);
                 }
